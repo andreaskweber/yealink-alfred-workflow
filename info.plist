@@ -121,11 +121,10 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>100</integer>
 				<key>script</key>
 				<string>$query = "{query}";
-
-echo $query;</string>
+include 'bin/command_script.php';</string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -167,7 +166,8 @@ echo $query;</string>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>script</key>
-				<string>include 'bin/filter_script.php';</string>
+				<string>$query = "{query}";
+include 'bin/filter_script.php';</string>
 				<key>subtext</key>
 				<string>Enter the keyword call with the number</string>
 				<key>title</key>

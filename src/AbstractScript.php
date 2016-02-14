@@ -24,7 +24,7 @@ abstract class AbstractScript
      *
      * @param string $query The query
      *
-     * @return string Response xml
+     * @return null
      */
     abstract public function invoke($query);
 

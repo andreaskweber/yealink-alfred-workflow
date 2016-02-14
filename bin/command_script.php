@@ -13,7 +13,4 @@ $config = require_once BASE_DIR . '/config.php';
 $script = new CommandScriptInput($config);
 
 /** @var string $query Input query */
-$xml = $script->invoke($query);
-
-// echo xml
-echo $xml;
+$script->invoke($query);
