@@ -21,9 +21,9 @@ class CommandScriptInput extends AbstractScript
             case Command::HANGUP:
                 $this->hangup();
                 break;
+            default:
+                throw new \LogicException('Something wen\'t wrong.');
         }
-
-        throw new \LogicException('Something wen\'t wrong.');
     }
 
     /**
@@ -94,8 +94,8 @@ class CommandScriptInput extends AbstractScript
         );
 
         // echo $command . PHP_EOL;
-
         exec($command);
+        echo sprintf('Calling "%s" with line "%s"', $number, $line);
     }
 
     /**
@@ -105,10 +105,15 @@ class CommandScriptInput extends AbstractScript
      */
     private function hangup()
     {
-        $command = 'curl \'http://%s:%s@%s/cgi-bin/ConfigManApp.com?key=X\'';
+        $command = sprintf(
+            'curl \'http://%s:%s@%s/cgi-bin/ConfigManApp.com?key=X\'',
+            $this->config['common']['username'],
+            $this->config['common']['password'],
+            $this->config['common']['ip']
+        );
 
         // echo $command . PHP_EOL;
-
         exec($command);
+        echo sprintf('Call canceled');
     }
 }

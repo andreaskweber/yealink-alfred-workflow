@@ -13,8 +13,33 @@ class FilterScriptInput extends AbstractScript
      */
     public function invoke($query)
     {
-        $number = $query;
         $builder = new ResponseXmlBuilder();
+        $number = $this->extractNumberFromQuery($query);
+
+        //
+        // If hangup command is expected, render xml
+        //
+
+        if ('H' == strtoupper(substr($number, 0, 1))) {
+            $item = new Item();
+            $item->title = 'Hangup';
+            $item->subtitle = sprintf('Ends an active call');
+            $item->icon = 'assets/glyphicons-659-tick.png';
+            $item->uid = 'hangup';
+            $item->autoComplete = 'Hangup';
+            $item->arg = Command::HANGUP;
+            $builder->addItem($item);
+
+            echo $builder->render();
+        }
+
+        //
+        // only valid numbers are supported
+        //
+
+        if (!preg_match('/^\+?\d+$/', $number)) {
+            return;
+        }
 
         //
         // Add lines
@@ -31,19 +56,18 @@ class FilterScriptInput extends AbstractScript
             $builder->addItem($item);
         }
 
-        //
-        // Add hangup command
-        //
-
-        $item = new Item();
-        $item->title = 'Hangup';
-        $item->subtitle = sprintf('Ends an active call');
-        $item->icon = 'assets/glyphicons-659-tick.png';
-        $item->uid = 'hangup';
-        $item->autoComplete = 'Hangup';
-        $item->arg = Command::HANGUP;
-        $builder->addItem($item);
-
         echo $builder->render();
+    }
+
+    /**
+     * Extracts and returns the filtered number from the given query.
+     *
+     * @param string $query The query
+     *
+     * @return string The number
+     */
+    private function extractNumberFromQuery($query)
+    {
+        return str_replace(' ', '', $query);
     }
 }
