@@ -26,3 +26,7 @@ composer.lock
 # Misc
 phpunit.xml
 phinx.yml
+
+# Project
+.com.greenworldsoft.syncfolderspro
+_DelSyncFiles
