@@ -22,7 +22,12 @@ class CommandScriptInput extends AbstractScript
                 $this->hangup();
                 break;
             default:
-                throw new \LogicException('Something wen\'t wrong.');
+                throw new \LogicException(
+                    sprintf(
+                        'Something wen\'t wrong. Invalid query: %s',
+                        $query
+                    )
+                );
         }
     }
 
