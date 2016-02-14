@@ -30,17 +30,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>A22519EA-731C-418C-8812-841B785DE162</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
 		<array>
 			<dict>
@@ -138,19 +127,6 @@ include 'bin/command_script.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>name</key>
-				<string>Dial with yealink ip phone</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.contact</string>
-			<key>uid</key>
-			<string>A22519EA-731C-418C-8812-841B785DE162</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -198,11 +174,6 @@ include 'bin/filter_script.php';</string>
 		<dict>
 			<key>ypos</key>
 			<real>40</real>
-		</dict>
-		<key>A22519EA-731C-418C-8812-841B785DE162</key>
-		<dict>
-			<key>ypos</key>
-			<real>160</real>
 		</dict>
 		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>

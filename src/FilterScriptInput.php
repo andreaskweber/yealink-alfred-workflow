@@ -49,7 +49,7 @@ class FilterScriptInput extends AbstractScript
             $item = new Item();
             $item->title = $line['title'];
             $item->subtitle = sprintf('Calls "%s" with line "%s"', $number, $line['title']);
-            $item->icon = 'assets/glyphicons-668-call-outgoing.png';
+            $item->icon = $line['icon'];
             $item->uid = $line['uri'];
             $item->autoComplete = $line['title'];
             $item->arg = sprintf('%s %s %s', Command::DIAL, $line['uri'], $number);

@@ -90,12 +90,12 @@ class CommandScriptInput extends AbstractScript
     private function dial($line, $number)
     {
         $command = sprintf(
-            'curl \'http://%s:%s@%s/cgi-bin/ConfigManApp.com?outgoing_uri=%s&number=%s\'',
+            'curl \'http://%s:%s@%s/cgi-bin/ConfigManApp.com?number=%s&outgoing_uri=%s\'',
             $this->config['common']['username'],
             $this->config['common']['password'],
             $this->config['common']['ip'],
-            $line,
-            $number
+            $number,
+            $line
         );
 
         // echo $command . PHP_EOL;

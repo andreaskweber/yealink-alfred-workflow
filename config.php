@@ -9,13 +9,13 @@ return array(
     'lines' => array(
         array(
             'title' => 'proud2be',
-            'uri' => 'line1@foo.bar',
-            'icon' => 'folder',
+            'uri' => '620@fritz.box',
+            'icon' => 'assets/glyphicons-668-call-outgoing.png',
         ),
         array(
             'title' => 'Booking Butler',
-            'uri' => 'line2@foo.bar',
-            'icon' => 'folder',
+            'uri' => '77754dd6q5@fpbx.de',
+            'icon' => 'assets/glyphicons-668-call-outgoing.png',
         ),
     )
 );
