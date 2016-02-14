@@ -1,0 +1,13 @@
+{
+    "name": "andreas-weber/yealink-alfred",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    }
+}
