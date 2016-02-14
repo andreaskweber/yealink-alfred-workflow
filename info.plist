@@ -167,8 +167,7 @@ echo $query;</string>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>script</key>
-				<string>include 'bin/script_filter.php';
-</string>
+				<string>include 'bin/filter_script.php';</string>
 				<key>subtext</key>
 				<string>Enter the keyword call with the number</string>
 				<key>title</key>

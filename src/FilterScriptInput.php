@@ -14,15 +14,16 @@ class FilterScriptInput extends AbstractScript
     {
         $builder = new ResponseXmlBuilder();
 
-        $item = new Item();
-        $item->title = 'The title';
-        $item->subtitle= 'The subtitle';
-        $item->icon = 'directory';
-        $item->uid = 'uniqueunique';
-        $item->autoComplete = 'The title';
-        $item->arg = 'argument';
-
-        $builder->addItem($item);
+        foreach ($this->config['lines'] as $line) {
+            $item = new Item();
+            $item->title = $line['title'];
+            $item->subtitle = sprintf('Call with line "%s"', $line['title']);
+            $item->icon = 'assets/icon-phone.png';
+            $item->uid = $line['uri'];
+            $item->autoComplete = $line['title'];
+            $item->arg = $line['uri'];
+            $builder->addItem($item);
+        }
 
         return $builder->render();
     }
