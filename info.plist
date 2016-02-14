@@ -19,6 +19,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>44B28B96-B123-4BBC-A8DA-2F8AC525D638</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>9C871615-625E-4B99-906B-5E9268D88DF2</key>
 		<array>
 			<dict>
@@ -43,40 +54,15 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Andreas Weber</string>
 	<key>description</key>
-	<string>Triggers calls with yealink ip phone</string>
+	<string>Remote control your Yealink ip phone</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Yealink</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Yealink</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -127,6 +113,44 @@ include 'bin/command_script.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Yealink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Call with Yealink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>44B28B96-B123-4BBC-A8DA-2F8AC525D638</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -168,7 +192,12 @@ include 'bin/filter_script.php';</string>
 		<key>222138FD-43D1-4A36-9213-CFAE9275C5D6</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>300</real>
+		</dict>
+		<key>44B28B96-B123-4BBC-A8DA-2F8AC525D638</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 		<key>9C871615-625E-4B99-906B-5E9268D88DF2</key>
 		<dict>
@@ -178,15 +207,15 @@ include 'bin/filter_script.php';</string>
 		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>
 			<key>ypos</key>
-			<real>40</real>
+			<real>160</real>
 		</dict>
 		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
 		<dict>
 			<key>ypos</key>
-			<real>140</real>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>http://andreas-weber.me</string>
 </dict>
 </plist>
