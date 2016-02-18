@@ -7,8 +7,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim es
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret. 
 
---
-
 ![Workflow Screenshot](http://gh01.de/alfred/github/workflow.png)
 
 ## Supported Phones
