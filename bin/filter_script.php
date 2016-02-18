@@ -1,7 +1,5 @@
 <?php
 
-namespace AndreasWeber;
-
 // bootstrap
 $config = require_once __DIR__ . '/../inc/bootstrap.php';
 

@@ -1,12 +1,10 @@
 <?php
 
-namespace AndreasWeber;
-
 // define base directory
-define('BASE_DIR', realpath(__DIR__ . '/../'));
+define('BASE_PATH', realpath(__DIR__ . '/../'));
 
 // load files
-require_once BASE_DIR . '/inc/autoload.php';
+require_once BASE_PATH . '/inc/autoload.php';
 
 // simulate a query for debugging
 // $query = 'line1@foo.bar 123123';
@@ -17,7 +15,7 @@ if (empty($query)) {
 }
 
 // check if config file exists
-$configFile = BASE_DIR . '/config.php';
+$configFile = BASE_PATH . '/config.php';
 if (!file_exists($configFile) || !is_readable($configFile)) {
     throw new \RuntimeException(
         sprintf(
@@ -28,4 +26,4 @@ if (!file_exists($configFile) || !is_readable($configFile)) {
 }
 
 // load config
-return require_once BASE_DIR . '/config.php';
+return require_once BASE_PATH . '/config/config.php';

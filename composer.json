@@ -1,7 +1,24 @@
 {
     "name": "andreas-weber/yealink-alfred",
+    "description": "A Yealink ip phone Alfred workflow that will rock your world.",
     "type": "project",
-    "license": "proprietary",
+    "homepage": "https://github.com/andreas-weber/yealink-workflow",
+    "license": "MIT",
+    "keywords": [
+        "yealink",
+        "alfred",
+        "ip phone"
+    ],
+    "authors": [
+        {
+            "name": "Andreas Weber",
+            "email": "code@andreas-weber.me",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/andreas-weber/yealink-workflow/issues"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
@@ -9,5 +26,15 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "AndreasWeber\\YealinkWorkflow\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AndreasWeber\\YealinkWorkflow\\Test\\": "tests/"
+        }
     }
 }
