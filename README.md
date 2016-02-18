@@ -1,13 +1,11 @@
 	This project is in an early development stage, so please be patient.
-	
 --
-
 # Yealink IP Phone Workflow [[Alfred](https://www.alfredapp.com/)]
 A workflow for your Yealink ip phone that will rock your world.
 
------
+--
+
 ![Workflow Screenshot](http://gh01.de/alfred/github/workflow.png)
------
 
 ## Features
 
