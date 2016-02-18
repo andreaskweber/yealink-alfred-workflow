@@ -1,6 +1,6 @@
 <?php
 
-namespace AndreasWeber\FilterScriptInput;
+namespace AndreasWeber\FilterScript;
 
 use AndreasWeber\ResponseXml\Item;
 

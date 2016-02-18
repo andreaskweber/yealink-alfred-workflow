@@ -2,11 +2,11 @@
 
 namespace AndreasWeber;
 
-use AndreasWeber\FilterScriptInput\ResponseXmlBuilder;
+use AndreasWeber\FilterScript\ResponseXmlBuilder;
 use AndreasWeber\ResponseXml\Command;
 use AndreasWeber\ResponseXml\Item;
 
-class FilterScriptInput extends AbstractScript
+class FilterScript extends AbstractScript
 {
     /**
      * @inheritDoc
@@ -24,7 +24,7 @@ class FilterScriptInput extends AbstractScript
             $item = new Item();
             $item->title = 'Hangup';
             $item->subtitle = sprintf('Ends an active call');
-            $item->icon = 'assets/glyphicons-659-tick.png';
+            $item->icon = 'assets/glyphicons-659-tick@3x.png';
             $item->uid = 'hangup';
             $item->autoComplete = 'Hangup';
             $item->arg = Command::HANGUP;

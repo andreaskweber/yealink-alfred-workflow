@@ -93,6 +93,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>name</key>
+				<string>Start call with Yealink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>44B28B96-B123-4BBC-A8DA-2F8AC525D638</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -138,19 +151,6 @@ include 'bin/command_script.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>name</key>
-				<string>Call with Yealink</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.contact</string>
-			<key>uid</key>
-			<string>44B28B96-B123-4BBC-A8DA-2F8AC525D638</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -165,13 +165,15 @@ include 'bin/command_script.php';</string>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
 				<key>script</key>
 				<string>$query = "{query}";
 include 'bin/filter_script.php';</string>
 				<key>subtext</key>
-				<string>Enter the keyword call with the number</string>
+				<string>Type call to control your phone</string>
 				<key>title</key>
-				<string>Call with yealink</string>
+				<string>Yealink</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>

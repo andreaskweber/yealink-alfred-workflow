@@ -119,6 +119,6 @@ class CommandScriptInput extends AbstractScript
 
         // echo $command . PHP_EOL;
         exec($command);
-        echo sprintf('Call canceled');
+        echo sprintf('Call ended');
     }
 }
