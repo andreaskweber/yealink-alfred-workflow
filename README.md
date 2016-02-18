@@ -1,6 +1,9 @@
 	This project is in an early development stage, so please be patient.
 --
 # Yealink IP Phone Workflow [[for Alfred](https://www.alfredapp.com/)]
+
+[![Build Status](https://travis-ci.org/andreas-weber/yealink-alfred-workflow.svg)](https://travis-ci.org/andreas-weber/yealink-alfred-workflow)
+
 A workflow for your Yealink ip phone that will rock your world.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret, quam Epicurus voluptatem petendam putat.
