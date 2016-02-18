@@ -35,7 +35,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Videmusne ut pueri ne v
 
 a contemplandis rebus perquirendisque deterreantur? Vide, quaeso, rectumne sit. Suam denique cuique naturam esse ad vivendum ducem. Duo Reges: constructio interrete.
 
-update config file `config/config.php`
+update config file `/config.php`
 
 ## Usage
 
