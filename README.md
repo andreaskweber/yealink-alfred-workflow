@@ -1,11 +1,23 @@
 	This project is in an early development stage, so please be patient.
 --
-# Yealink IP Phone Workflow [[Alfred](https://www.alfredapp.com/)]
+# Yealink IP Phone Workflow [[for Alfred](https://www.alfredapp.com/)]
 A workflow for your Yealink ip phone that will rock your world.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret, quam Epicurus voluptatem petendam putat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret. 
 
 --
 
 ![Workflow Screenshot](http://gh01.de/alfred/github/workflow.png)
+
+## Supported Phones
+
+- [SIP-T41P](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1035&parentcateid=1396&cateid=1035&BaseInfoCateId=1035&Cate_Id=1035&index=2)
+- [SIP-T42G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1034&parentcateid=1396&cateid=1034&BaseInfoCateId=1034&Cate_Id=1034&index=2)
+- [SIP-T46G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1032&parentcateid=1396&cateid=1032&BaseInfoCateId=1032&Cate_Id=1032&index=2)
+- [SIP-T48G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1217&parentcateid=1396&cateid=1217&BaseInfoCateId=1217&Cate_Id=1217&index=2)
+- [SIP-VP49G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1408&parentcateid=1396&cateid=1408&BaseInfoCateId=1408&Cate_Id=1408&index=2)
 
 ## Features
 
