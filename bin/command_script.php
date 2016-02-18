@@ -2,11 +2,8 @@
 
 namespace AndreasWeber;
 
-// boot
-define('BASE_DIR', realpath(__DIR__ . '/../'));
-
 // bootstrap
-$config = require_once BASE_DIR . '/bin/bootstrap.php';
+$config = require_once __DIR__ . '/../inc/bootstrap.php';
 
 // script
 $script = new CommandScriptInput($config);
