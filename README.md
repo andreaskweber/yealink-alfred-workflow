@@ -11,7 +11,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim es
 
 ## Supported Phones
 
-Maybe other Yealink phones with [Action URI](http://www.yealink.ae/assets/V60-Documents/Action-URL-URI.pdf) are also supported.
+Maybe other Yealink phones with [Action URI](http://www.yealink.ae/assets/V60-Documents/Action-URL-URI.pdf) functionality are also supported.
 
 - [SIP-T41P](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1035&parentcateid=1396&cateid=1035&BaseInfoCateId=1035&Cate_Id=1035&index=2)
 - [SIP-T42G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1034&parentcateid=1396&cateid=1034&BaseInfoCateId=1034&Cate_Id=1034&index=2)
