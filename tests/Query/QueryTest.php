@@ -18,32 +18,65 @@ class QueryTest extends TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Could not create query instance. Query does not match expected format.
+     * @expectedExceptionMessage Could not create query instance. Command does not match expected format.
      */
-    public function testInvalidQueryFails()
+    public function testInvalidQueryCommandFails()
     {
-        new Query('asda dasd !!');
+        new Query('invalid-command 0160123456789');
     }
-
-    public function testValidQueryUppercase()
-    {
-        $queryString = 'CALL:COmmAND';
-        $query = new Query($queryString);
-
-        $this->assertSame(
-            strtolower($queryString),
-            $query->getQuery()
-        );
-    }
-
+    
     public function testValidQuery()
     {
-        $queryString = 'call:command';
+        $queryString = 'call:number 0160123465789';
         $query = new Query($queryString);
 
         $this->assertSame(
             $queryString,
             $query->getQuery()
+        );
+    }
+
+    public function testValidQueryCommand()
+    {
+        $queryString = 'call:number 0160123465789';
+        $query = new Query($queryString);
+
+        $this->assertSame(
+            'call:number',
+            $query->getCommand()
+        );
+    }
+
+    public function testValidQueryCommandUppercase()
+    {
+        $queryString = 'CALL:NuMBer 0160123465789';
+        $query = new Query($queryString);
+
+        $this->assertSame(
+            'call:number',
+            $query->getCommand()
+        );
+    }
+
+    public function testArgument()
+    {
+        $queryString = 'call:number 0160123465789';
+        $query = new Query($queryString);
+
+        $this->assertSame(
+            '0160123465789',
+            $query->getArgument()
+        );
+    }
+
+    public function testArgumentWithSpaces()
+    {
+        $queryString = 'call:number 0160123465789 line2';
+        $query = new Query($queryString);
+
+        $this->assertSame(
+            '0160123465789 line2',
+            $query->getArgument()
         );
     }
 }
