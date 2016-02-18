@@ -56,7 +56,6 @@ class Application
     {
         $configFile = BASE_PATH . '/config.php';
 
-        // check if config file exists
         if (!file_exists($configFile) || !is_readable($configFile)) {
             throw new \RuntimeException(
                 sprintf(
@@ -66,7 +65,6 @@ class Application
             );
         }
 
-        // load config
         $this->config = require_once $configFile;
     }
 
