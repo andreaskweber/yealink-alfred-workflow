@@ -4,6 +4,7 @@ namespace AndreasWeber\YealinkWorkflow;
 
 use AndreasWeber\YealinkWorkflow\Command\CallCommand;
 use AndreasWeber\YealinkWorkflow\Command\CommandInterface;
+use AndreasWeber\YealinkWorkflow\Command\MainMenuCommand;
 use AndreasWeber\YealinkWorkflow\Query\Query;
 use AndreasWeber\YealinkWorkflow\Response\ResponseXmlBuilder;
 
@@ -40,16 +41,17 @@ class Application
     }
 
     /**
-     * Runs the application with the given query.
+     * Runs the application filter with the given query.
      *
      * @param Query $query The query
      *
      * @return null
      */
-    public function run(Query $query)
+    public function filter(Query $query)
     {
         /** @var CommandInterface[] $availableCommands */
         $availableCommands = array(
+            new MainMenuCommand($query),
             new CallCommand($query, $this->config),
         );
 
@@ -61,6 +63,18 @@ class Application
         }
 
         echo $this->responseBuilder->render($commands);
+    }
+
+    /**
+     * Runs the application action with the given query.
+     *
+     * @param Query $query The query
+     *
+     * @return null
+     */
+    public function action(Query $query)
+    {
+        echo "some action" . PHP_EOL;
     }
 
     /**

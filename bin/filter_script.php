@@ -10,4 +10,4 @@ $app = require_once __DIR__ . '/../inc/bootstrap.php';
 $query = new Query($query);
 
 // run
-$app->action($query);
+$app->filter($query);
