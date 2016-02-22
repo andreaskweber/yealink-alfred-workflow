@@ -1,12 +1,13 @@
 <?php
 
-use AndreasWeber\YealinkWorkflow\Script\MainScript;
+use AndreasWeber\YealinkWorkflow\Application;
+use AndreasWeber\YealinkWorkflow\Query\Query;
 
-// bootstrap application
+/** @var Application $app */
 $app = require_once __DIR__ . '/../inc/bootstrap.php';
 
-// bootstrap script
-$script = new MainScript($app);
+// query
+$query = new Query($query);
 
-// invoke script
-$script->invoke();
+// run
+$app->run($query);

@@ -18,13 +18,14 @@ class QueryTest extends TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Could not create query instance. Command does not match expected format.
+     * @expectedExceptionMessage Could not create query "invalid-command 0160123456789" instance. Command
+     *                           "invalid-command" does not match expected format.
      */
     public function testInvalidQueryCommandFails()
     {
         new Query('invalid-command 0160123456789');
     }
-    
+
     public function testValidQuery()
     {
         $queryString = 'call:number 0160123465789';

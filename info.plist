@@ -8,6 +8,17 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>0E361573-C7E2-4D4F-B263-D4CEDECA29FB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>222138FD-43D1-4A36-9213-CFAE9275C5D6</key>
 		<array>
 			<dict>
@@ -23,7 +34,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>0E361573-C7E2-4D4F-B263-D4CEDECA29FB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -34,7 +45,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>222138FD-43D1-4A36-9213-CFAE9275C5D6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -66,6 +77,84 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>name</key>
+				<string>Start call with Yealink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>44B28B96-B123-4BBC-A8DA-2F8AC525D638</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>$query = 'ye:call ' . "{query}";
+include 'bin/main_script.php';</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0E361573-C7E2-4D4F-B263-D4CEDECA29FB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Yealink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>$query = "{query}";
+include 'bin/main_script.php';</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -93,70 +182,12 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>name</key>
-				<string>Start call with Yealink</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.contact</string>
-			<key>uid</key>
-			<string>44B28B96-B123-4BBC-A8DA-2F8AC525D638</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>$query = "{query}";
-include 'bin/command_script.php';</string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Yealink</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
-				<string>p</string>
+				<string>ye</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -168,16 +199,16 @@ include 'bin/command_script.php';</string>
 				<key>runningsubtext</key>
 				<string>Please wait...</string>
 				<key>script</key>
-				<string>$query = "{query}";
-include 'bin/filter_script.php';</string>
+				<string>$query = 'ye' . "{query}";
+include 'bin/main_script.php';</string>
 				<key>subtext</key>
-				<string>Type p to control your phone</string>
+				<string>Type ye to control your phone</string>
 				<key>title</key>
 				<string>Yealink</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -191,30 +222,35 @@ include 'bin/filter_script.php';</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0E361573-C7E2-4D4F-B263-D4CEDECA29FB</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
 		<key>222138FD-43D1-4A36-9213-CFAE9275C5D6</key>
 		<dict>
 			<key>ypos</key>
-			<real>300</real>
+			<real>290</real>
 		</dict>
 		<key>44B28B96-B123-4BBC-A8DA-2F8AC525D638</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>80</real>
 		</dict>
 		<key>9C871615-625E-4B99-906B-5E9268D88DF2</key>
 		<dict>
 			<key>ypos</key>
-			<real>40</real>
+			<real>290</real>
 		</dict>
 		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>180</real>
 		</dict>
 		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>290</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

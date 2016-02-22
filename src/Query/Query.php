@@ -34,7 +34,13 @@ class Query
 
         $this->command = strtolower(array_shift($queryParts));
         if (0 === preg_match('/^[a-z\:]*$/', $this->command)) {
-            throw new \InvalidArgumentException('Could not create query instance. Command does not match expected format.');
+            throw new \InvalidArgumentException(
+                sprintf(
+                    'Could not create query "%s" instance. Command "%s" does not match expected format.',
+                    $query,
+                    $this->command
+                )
+            );
         }
 
         if (!empty($queryParts)) {

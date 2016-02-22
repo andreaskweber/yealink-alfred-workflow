@@ -9,7 +9,10 @@ define('BASE_PATH', realpath(__DIR__ . '/../'));
 require_once BASE_PATH . '/inc/autoload.php';
 
 // simulate a query for debugging
-// $query = 'line1@foo.bar 123123';
+// $query = 'ye:call';
 
-// app
-return new Application($query);
+// bootstrap application
+$app = new Application();
+
+// return
+return $app;

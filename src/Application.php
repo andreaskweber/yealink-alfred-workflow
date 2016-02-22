@@ -2,7 +2,10 @@
 
 namespace AndreasWeber\YealinkWorkflow;
 
+use AndreasWeber\YealinkWorkflow\Command\CallCommand;
+use AndreasWeber\YealinkWorkflow\Command\CommandInterface;
 use AndreasWeber\YealinkWorkflow\Query\Query;
+use AndreasWeber\YealinkWorkflow\Response\ResponseXmlBuilder;
 
 class Application
 {
@@ -12,19 +15,18 @@ class Application
     protected $config;
 
     /**
-     * @var Query The query
+     * @var ResponseXmlBuilder Response builder
      */
-    private $query;
+    private $responseBuilder;
 
     /**
      * __construct()
-     *
-     * @param string $query The query
      */
-    public function __construct($query)
+    public function __construct()
     {
         $this->initConfig();
-        $this->initQuery($query);
+
+        $this->responseBuilder = new ResponseXmlBuilder();
     }
 
     /**
@@ -38,13 +40,27 @@ class Application
     }
 
     /**
-     * Returns the query.
+     * Runs the application with the given query.
      *
-     * @return Query
+     * @param Query $query The query
+     *
+     * @return null
      */
-    public function getQuery()
+    public function run(Query $query)
     {
-        return $this->query;
+        /** @var CommandInterface[] $availableCommands */
+        $availableCommands = array(
+            new CallCommand($query, $this->config),
+        );
+
+        $commands = array();
+        foreach ($availableCommands as $command) {
+            if ($command->supports()) {
+                $commands[] = $command;
+            }
+        }
+
+        echo $this->responseBuilder->render($commands);
     }
 
     /**
@@ -66,17 +82,5 @@ class Application
         }
 
         $this->config = require_once $configFile;
-    }
-
-    /**
-     * Initializes the query instance by parsing the query.
-     *
-     * @param string $query The query
-     *
-     * @return null
-     */
-    private function initQuery($query)
-    {
-        $this->query = new Query($query);
     }
 }
