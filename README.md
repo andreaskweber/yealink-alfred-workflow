@@ -22,7 +22,7 @@ Maybe other Yealink phones with [Action URI](http://www.yealink.ae/assets/V60-Do
 
 After downloading, simply double-click to install the workflow in Alfred.
 
-**[Download](https://github.com/andreas-weber/yealink-alfred-workflow/blob/master/Yealink.alfredworkflow)**
+**[Download](https://raw.github.com/andreas-weber/yealink-alfred-workflow/master/Yealink.alfredworkflow)**
 
 After installation open the workflow folder, create the configuration file `config.php` and update the file with your data. You can use `config.php.dist` as boilerplate. When you're finished, you can start using the workflow by typing `yl`.
 
