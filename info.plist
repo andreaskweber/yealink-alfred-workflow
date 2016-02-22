@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>me.andreas-weber.alfred.yealink</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -219,7 +219,7 @@ include 'bin/filter_script.php';</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>See README.md in workflow directory</string>
 	<key>uidata</key>
 	<dict>
 		<key>0E361573-C7E2-4D4F-B263-D4CEDECA29FB</key>

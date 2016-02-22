@@ -22,10 +22,7 @@ Thumbs.db
 /composer.phar
 /vendor
 
-# Misc
-phpunit.xml
-phinx.yml
-
 # Project
+config.php
 .com.greenworldsoft.syncfolderspro
 _DelSyncFiles

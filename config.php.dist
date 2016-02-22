@@ -1,0 +1,26 @@
+<?php
+
+return array(
+    'phone' => array(
+        'ip' => '192.168.178.100',
+        'username' => 'admin',
+        'password' => 'admin',
+    ),
+    'lines' => array(
+        array(
+            'title' => 'Line 1',
+            'uri' => 'line1@foo.bar',
+            'icon' => 'assets/glyphicons-668-call-outgoing@3x.png',
+        ),
+        array(
+            'title' => 'Line 2',
+            'uri' => 'line2@foo.bar',
+            'icon' => 'assets/glyphicons-668-call-outgoing@3x.png',
+        ),
+        array(
+            'title' => 'Line 3',
+            'uri' => 'line3@foo.bar',
+             'icon' => 'assets/glyphicons-668-call-outgoing@3x.png',
+        ),
+    )
+);

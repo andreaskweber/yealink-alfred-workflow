@@ -1,16 +1,12 @@
-	This project is in an early development stage, so please be patient.
---
 # Yealink IP Phone Workflow [[for Alfred](https://www.alfredapp.com/)]
 
 [![Build Status](https://travis-ci.org/andreas-weber/yealink-alfred-workflow.svg)](https://travis-ci.org/andreas-weber/yealink-alfred-workflow)
 
-A workflow for your Yealink ip phone that will rock your world.
+A workflow for your Yealink ip phone that will rock your world  (requires Powerpack license).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret, quam Epicurus voluptatem petendam putat.
+![Main-Menu](docs/main-menu.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sciret confestim esse moriendum eamque mortem ardentiore studio peteret. 
-
-![Workflow Screenshot](http://gh01.de/alfred/github/workflow.png)
+![Call-Menu](docs/call-menu.png)
 
 ## Supported Phones
 
@@ -22,34 +18,25 @@ Maybe other Yealink phones with [Action URI](http://www.yealink.ae/assets/V60-Do
 - [SIP-T48G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1217&parentcateid=1396&cateid=1217&BaseInfoCateId=1217&Cate_Id=1217&index=2)
 - [SIP-VP49G](http://www.yealink.com/DE/product_info.aspx?ProductsCateID=1408&parentcateid=1396&cateid=1408&BaseInfoCateId=1408&Cate_Id=1408&index=2)
 
-## Features
-
-- bla bla bla
-- foo foo foo 
-- bar bar bar
-
-a contemplandis rebus perquirendisque deterreantur? Vide, quaeso, rectumne sit. Suam denique cuique naturam esse ad vivendum ducem. Duo Reges: constructio interrete.
-
 ## Installation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? Vide, quaeso, rectumne sit. Suam denique cuique naturam esse ad vivendum ducem. Duo Reges: constructio interrete.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Videmusne ut pueri ne verberibus quidem 
+After downloading, simply double-click to install the workflow in Alfred.
 
-**[Download](https://github.com/andreas-weber/yealink-workflow/zipball/master/)**
+**[Download](https://github.com/andreas-weber/yealink-workflow/zipball/master/Yealink.alfredworkflow)**
 
-a contemplandis rebus perquirendisque deterreantur? Vide, quaeso, rectumne sit. Suam denique cuique naturam esse ad vivendum ducem. Duo Reges: constructio interrete.
-
-update config file `/config.php`
+After installation open the workflow folder, create the configuration file `config.php` and update the file with your data. You can use `config.php.dist` as boilerplate. When you're finished, you can start using the workflow by typing `yl`.
 
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit `call` lalalalal quickstart.
+The follwing triggers are supported:
 
-Key Combination        | Action
----------------------- | ------
-`enter`                | Open entry in default browser
-`cmd` + `c`            | Copy URL of the entry
-`cmd` + `enter`        | Paste URL to front most app
-`shift` or `cmd` + `y` | Open URL in QuickLook
+Trigger        | Action
+---------------| ------
+`yl`           | Shows the main menu
+`yl:call`      | Starts a call
+`yl:hangup`    | Ends a call
+
+To call directly from Alfred's contacts you can configure a [contact action trigger](https://www.alfredapp.com/help/workflows/triggers/contact-action/).
 
 ## Contribute
 

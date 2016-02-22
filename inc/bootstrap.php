@@ -10,7 +10,7 @@ define('COMMAND_PREFIX', 'ye');
 require_once BASE_PATH . '/inc/autoload.php';
 
 // simulate a query for debugging
-// $query = 'ye:call +49 160 90282219';
+// $query = 'ye:call +49 123 456798';
 
 // bootstrap application
 $app = new Application();
