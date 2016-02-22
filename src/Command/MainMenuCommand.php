@@ -30,8 +30,8 @@ class MainMenuCommand extends AbstractCommand
     {
         $items = array(
             new Item(
-                'Call someone',
-                'This is the call subtitle',
+                'Call',
+                'Starts a phone call',
                 'assets/glyphicons-443-earphone@3x.png',
                 COMMAND_PREFIX . ':call',
                 ':call ',
@@ -40,7 +40,7 @@ class MainMenuCommand extends AbstractCommand
             ),
             new Item(
                 'Hangup',
-                'This is the hangup subtitle',
+                'Ends the active call',
                 'assets/glyphicons-659-tick@3x.png',
                 COMMAND_PREFIX . ':hangup',
                 ':hangup ',

@@ -33,7 +33,11 @@ class CallCommand extends AbstractCommand
 
         $this->app->getPhoneGateway()->call($number, $line);
 
-        echo sprintf('Calling "%s" with line "%s"', $number, $line);
+        if($line) {
+            echo sprintf('Calling "%s" with line "%s"', $number, $line);
+        } else {
+            echo sprintf('Calling "%s" with active line', $number);
+        }
     }
 
     /**
