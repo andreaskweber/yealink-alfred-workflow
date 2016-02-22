@@ -202,7 +202,7 @@ include 'bin/main_script.php';</string>
 				<string>$query = "{query}";
 include 'bin/filter_script.php';</string>
 				<key>subtext</key>
-				<string>Type ye to control your phone</string>
+				<string>Type "ye" to control your phone</string>
 				<key>title</key>
 				<string>Yealink</string>
 				<key>type</key>
