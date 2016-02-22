@@ -27,7 +27,11 @@ class Query
     public function __construct($query)
     {
         if (empty($query)) {
-            throw new \InvalidArgumentException('Could not create query instance. Empty input query given.');
+            $query = COMMAND_PREFIX;
+        }
+
+        if (0 === strpos($query, ':')) {
+            $query = COMMAND_PREFIX . $query;
         }
 
         $queryParts = explode(' ', $query);
@@ -58,6 +62,16 @@ class Query
     public function getCommand()
     {
         return $this->command;
+    }
+
+    /**
+     * Returns the command without the prefix.
+     *
+     * @return string
+     */
+    public function getCommandWithoutPrefix()
+    {
+        return rtrim(str_replace(COMMAND_PREFIX, '', $this->getCommand()), ' ') . ' ';
     }
 
     /**

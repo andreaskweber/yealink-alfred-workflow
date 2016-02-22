@@ -2,33 +2,34 @@
 
 namespace AndreasWeber\YealinkWorkflow\Command;
 
+use AndreasWeber\YealinkWorkflow\Application;
 use AndreasWeber\YealinkWorkflow\Query\Query;
 
 abstract class AbstractCommand implements CommandInterface
 {
     /**
-     * @var Query The query
+     * @var Application The application
      */
-    protected $query;
+    protected $app;
 
     /**
      * __construct()
      *
-     * @param Query $query The query
+     * @param Application $app The application
      */
-    public function __construct(Query $query)
+    public function __construct(Application $app)
     {
-        $this->query = $query;
+        $this->app = $app;
     }
 
     /**
      * @inheritDoc
      */
-    public function supports()
+    public function supports(Query $query)
     {
         return 0 === strpos(
             $this->getCommand(),
-            $this->query->getCommand()
+            $query->getCommand()
         );
     }
 }

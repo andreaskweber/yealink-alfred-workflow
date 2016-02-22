@@ -4,7 +4,9 @@ namespace AndreasWeber\YealinkWorkflow;
 
 use AndreasWeber\YealinkWorkflow\Command\CallCommand;
 use AndreasWeber\YealinkWorkflow\Command\CommandInterface;
+use AndreasWeber\YealinkWorkflow\Command\HangupCommand;
 use AndreasWeber\YealinkWorkflow\Command\MainMenuCommand;
+use AndreasWeber\YealinkWorkflow\Phone\PhoneGateway;
 use AndreasWeber\YealinkWorkflow\Query\Query;
 use AndreasWeber\YealinkWorkflow\Response\ResponseXmlBuilder;
 
@@ -21,13 +23,75 @@ class Application
     private $responseBuilder;
 
     /**
+     * @var PhoneGateway Phone gateway
+     */
+    private $phoneGateway;
+
+    /**
+     * @var CommandInterface[] Registered commands
+     */
+    private $commands;
+
+    /**
      * __construct()
      */
     public function __construct()
     {
         $this->initConfig();
-
+        $this->initCommands();
         $this->responseBuilder = new ResponseXmlBuilder();
+        $this->phoneGateway = new PhoneGateway(
+            $this->config['phone']['ip'],
+            $this->config['phone']['username'],
+            $this->config['phone']['password']
+        );
+    }
+
+    /**
+     * Runs the application filter with the given query.
+     *
+     * @param Query $query The query
+     *
+     * @return null
+     */
+    public function filter(Query $query)
+    {
+        $items = array();
+        foreach ($this->commands as $command) {
+            if ($command->supports($query)) {
+                $items = array_merge(
+                    $items,
+                    $command->getItems($query)
+                );
+            }
+        }
+
+        echo $this->responseBuilder->render($items);
+    }
+
+    /**
+     * Runs the application action with the given query.
+     *
+     * @param Query $query The query
+     *
+     * @return null
+     */
+    public function action(Query $query)
+    {
+        foreach ($this->commands as $command) {
+            if ($command->getCommand() === $query->getCommand()) {
+                $command->invoke($query);
+
+                return;
+            }
+        }
+
+        throw new \LogicException(
+            sprintf(
+                'Could not invoke command. No registered command for "%s" found.',
+                $query->getCommand()
+            )
+        );
     }
 
     /**
@@ -41,40 +105,13 @@ class Application
     }
 
     /**
-     * Runs the application filter with the given query.
+     * Returns the phone gateway.
      *
-     * @param Query $query The query
-     *
-     * @return null
+     * @return PhoneGateway
      */
-    public function filter(Query $query)
+    public function getPhoneGateway()
     {
-        /** @var CommandInterface[] $availableCommands */
-        $availableCommands = array(
-            new MainMenuCommand($query),
-            new CallCommand($query, $this->config),
-        );
-
-        $commands = array();
-        foreach ($availableCommands as $command) {
-            if ($command->supports()) {
-                $commands[] = $command;
-            }
-        }
-
-        echo $this->responseBuilder->render($commands);
-    }
-
-    /**
-     * Runs the application action with the given query.
-     *
-     * @param Query $query The query
-     *
-     * @return null
-     */
-    public function action(Query $query)
-    {
-        echo "some action" . PHP_EOL;
+        return $this->phoneGateway;
     }
 
     /**
@@ -96,5 +133,19 @@ class Application
         }
 
         $this->config = require_once $configFile;
+    }
+
+    /**
+     * Initializes the commands by instantiating them.
+     *
+     * @return null
+     */
+    public function initCommands()
+    {
+        $this->commands = array(
+            new MainMenuCommand($this),
+            new CallCommand($this),
+            new HangupCommand($this)
+        );
     }
 }

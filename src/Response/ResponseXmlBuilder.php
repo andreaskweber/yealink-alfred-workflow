@@ -2,7 +2,7 @@
 
 namespace AndreasWeber\YealinkWorkflow\Response;
 
-use AndreasWeber\YealinkWorkflow\Command\CommandInterface;
+use AndreasWeber\YealinkWorkflow\Item\ItemInterface;
 
 class ResponseXmlBuilder
 {
@@ -19,32 +19,31 @@ class ResponseXmlBuilder
         $this->filterXmlTemplatePath = BASE_PATH . '/resources/filter_script_template.xml';;
     }
 
-
     /**
      * Renders the response.
      *
-     * @param CommandInterface[] $commands The commands
+     * @param ItemInterface[] $items Items
      *
      * @return string Response xml
      */
-    public function render(array $commands)
+    public function render(array $items)
     {
         $filterXml = $this->getFilterXmlTemplate();
 
-        foreach ($commands as $command) {
-            foreach($command->getItems() as $item) {
-                $itemXml = $filterXml->addChild('item');
+        foreach ($items as $item) {
+            $itemXml = $filterXml->addChild('item');
+            $itemXml->addChild('title', $item->getTitle());
+            $itemXml->addChild('subtitle', $item->getSubtitle());
+            $itemXml->addChild('icon', $item->getIcon());
+            $itemXml->addAttribute('valid', $item->isValid() ? 'yes' : 'no');
+            // $itemXml->addAttribute('uid', $item->getUid());
 
-                $itemXml->addAttribute('uid', $item->getUid());
-                $itemXml->addAttribute('valid', $item->isValid() ? 'yes' : 'no');
+            if ($item->getAutoComplete()) {
                 $itemXml->addAttribute('autocomplete', $item->getAutoComplete());
-                $itemXml->addChild('title', $item->getTitle());
-                $itemXml->addChild('subtitle', $item->getSubtitle());
-                $itemXml->addChild('icon', $item->getIcon());
+            }
 
-                if($item->isValid()) {
-                    $itemXml->addAttribute('arg', $item->getArgument());
-                }
+            if ($item->isValid()) {
+                $itemXml->addAttribute('arg', $item->getArgument());
             }
         }
 

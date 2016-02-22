@@ -4,12 +4,13 @@ use AndreasWeber\YealinkWorkflow\Application;
 
 // define base directory
 define('BASE_PATH', realpath(__DIR__ . '/../'));
+define('COMMAND_PREFIX', 'ye');
 
 // load files
 require_once BASE_PATH . '/inc/autoload.php';
 
 // simulate a query for debugging
-// $query = 'ye:call';
+$query = 'ye:call +49 160 90282219';
 
 // bootstrap application
 $app = new Application();

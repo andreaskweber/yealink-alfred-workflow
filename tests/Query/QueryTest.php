@@ -8,12 +8,29 @@ use AndreasWeber\YealinkWorkflow\Test\TestCase;
 class QueryTest extends TestCase
 {
     /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Could not create query instance. Empty input query given.
+     * @inheritDoc
      */
-    public function testEmptyQueryFails()
+    protected function setUp()
     {
-        new Query('');
+        parent::setUp();
+
+        if (!defined('COMMAND_PREFIX')) {
+            define('COMMAND_PREFIX', 'ye');
+        }
+    }
+
+    public function testEmptyQueryGetsPrefixAdded()
+    {
+        $query = new Query('');
+
+        $this->assertSame(COMMAND_PREFIX, $query->getCommand());
+    }
+
+    public function testIncompleteCommandGetsPrefixAdded()
+    {
+        $query = new Query(':call');
+
+        $this->assertSame(COMMAND_PREFIX . ':call', $query->getCommand());
     }
 
     /**

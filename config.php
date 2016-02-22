@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'common' => array(
+    'phone' => array(
         'ip' => '192.168.178.50',
         'username' => 'admin',
         'password' => 'admin',

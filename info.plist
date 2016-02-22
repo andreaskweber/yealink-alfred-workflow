@@ -199,8 +199,8 @@ include 'bin/main_script.php';</string>
 				<key>runningsubtext</key>
 				<string>Please wait...</string>
 				<key>script</key>
-				<string>$query = 'ye' . "{query}";
-include 'bin/main_script.php';</string>
+				<string>$query = "{query}";
+include 'bin/filter_script.php';</string>
 				<key>subtext</key>
 				<string>Type ye to control your phone</string>
 				<key>title</key>
