@@ -24,7 +24,7 @@ After downloading, simply double-click to install the workflow in Alfred.
 
 **[Download](https://raw.github.com/andreas-weber/yealink-alfred-workflow/master/Yealink.alfredworkflow)**
 
-After installation open the workflow folder, create the configuration file `config.php` and update the file with your data. You can use `config.php.dist` as boilerplate. When you're finished, you can start using the workflow by typing `yl`.
+After installation is finished, open the workflow folder, create the configuration file `config.php` and update it with your data. You can use `config.php.dist` as boilerplate. When you're done, you can start using the workflow by typing `yl`.
 
 ## Usage
 
